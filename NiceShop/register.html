@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>تسجيل - إيجارك</title>
+  <title>إنشاء حساب - إيجارك</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -17,8 +17,7 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
@@ -31,65 +30,135 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+
+  <style>
+    /* Additional styles for form consistency */
+    .register-page .form-floating label,
+    .register-page .form-label {
+      color: #495057;
+      font-weight: 500;
+    }
+    
+    .register-page .form-control,
+    .register-page .form-select {
+      border-radius: 8px;
+      padding: 12px 15px;
+      margin-bottom: 15px;
+      border: 1px solid #ced4da;
+    }
+    
+    .register-page .form-control:focus,
+    .register-page .form-select:focus {
+      border-color: #86b7fe;
+      box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+    
+    .register-page .btn-register {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 12px;
+      font-weight: 500;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    
+    .register-page .btn-register:hover {
+      background-color: var(--accent-color);
+    }
+    
+    .register-page .form-check-label {
+      margin-right: 25px;
+    }
+    
+    .register-page .form-check-input {
+      margin-right: -1.25em;
+    }
+    
+    .register-page #map {
+      margin-bottom: 15px;
+    }
+    
+    .registration-form-wrapper {
+      position: relative;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px var(--heading-color);
+    }
+    
+    .form-header {
+      margin-bottom: 30px;
+    }
+    
+    .form-header h2 {
+      color: var(--accent-color);
+      font-weight: 700;
+    }
+    
+    .divider {
+      position: relative;
+      text-align: center;
+      margin: 20px 0;
+    }
+    
+    .divider span {
+      background: white;
+      padding: 0 15px;
+      position: relative;
+      z-index: 1;
+      color: #6c757d;
+    }
+    
+    .divider:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: #dee2e6;
+      z-index: 0;
+    }
+    
+    .btn-social {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 5px;
+      padding: 8px 15px;
+      border-radius: 8px;
+      border: 1px solid #dee2e6;
+      color: #495057;
+    }
+    
+    .btn-social i {
+      margin-left: 5px;
+    }
+    
+    .login-link {
+      margin-top: 15px;
+    }
+  </style>
 </head>
 
 <body class="register-page">
 
-  <header id="header" class="header sticky-top">
+
+  <header id="header" class="header sticky-top" data-aos="fade-down">
     <!-- Top Bar -->
-    <div class="top-bar py-2">
-      <div class="container-fluid container-xl">
-        <div class="row align-items-center">
-          <div class="col-lg-4 d-none d-lg-flex">
-        
-          </div>
-
-          <div class="col-lg-4 col-md-12 text-center">
-            <div class="announcement-slider swiper init-swiper">
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": 1,
-                  "direction": "vertical",
-                  "effect": "slide"
-                }
-              </script>
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">🚚  توصيل مجاني للطلبات فوق 2000 جينه مصري</div>
-                <div class="swiper-slide">🎁 خصم 5% على أول حجز</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 d-none d-lg-block">
-            
-             
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Header -->
     <div class="main-header">
       <div class="container-fluid container-xl">
         <div class="d-flex py-3 align-items-center justify-content-between">
 
           <!-- Logo -->
           <a href="index.html" class="logo d-flex align-items-center">
-            <h1 class="sitename" style="font-size:70px ;">إيجارك</h1>
+            <h1 class="sitename">إيجارك</h1>
           </a>
 
           <!-- Search -->
           <form class="search-form desktop-search-form">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="ابحث عن المنتجات">
+              <input type="text" class="form-control" placeholder="ابحث عن ما تريد تأجيره...">
               <button class="btn" type="submit">
                 <i class="bi bi-search"></i>
               </button>
@@ -111,8 +180,8 @@
               </button>
               <div class="dropdown-menu">
                 <div class="dropdown-header">
-                  <h6>مرحبًا بك في <span class="sitename">NiceShop</span></h6>
-                  <p class="mb-0">الوصول إلى الحساب وإدارة الطلبات</p>
+                  <h6>مرحبًا بك في <span class="sitename">إيجارك</span></h6>
+                  <p class="mb-0">إدارة الحساب والطلبات</p>
                 </div>
                 <div class="dropdown-body">
                   <a class="dropdown-item d-flex align-items-center" href="account.html">
@@ -121,35 +190,15 @@
                   </a>
                   <a class="dropdown-item d-flex align-items-center" href="account.html">
                     <i class="bi bi-bag-check me-2"></i>
-                    <span>طلباتي</span>
-                  </a>
-                  <a class="dropdown-item d-flex align-items-center" href="account.html">
-                    <i class="bi bi-heart me-2"></i>
-                    <span>قائمة الرغبات</span>
-                  </a>
-                  <a class="dropdown-item d-flex align-items-center" href="account.html">
-                    <i class="bi bi-gear me-2"></i>
-                    <span>الإعدادات</span>
+                    <span>لوحة التحكم</span>
                   </a>
                 </div>
                 <div class="dropdown-footer">
-                  <a href="register.html" class="btn btn-primary w-100 mb-2">تسجيل الدخول</a>
-                  <a href="login.html" class="btn btn-outline-primary w-100">إنشاء حساب</a>
+                  <a href="login.html" class="btn btn-primary w-100 mb-2">تسجيل الدخول</a>
+                  <a href="register.html" class="btn btn-outline-primary w-100">إنشاء حساب</a>
                 </div>
               </div>
             </div>
-
-            <!-- Wishlist -->
-            <a href="account.html" class="header-action-btn d-none d-md-block">
-              <i class="bi bi-heart"></i>
-              <span class="badge">0</span>
-            </a>
-
-            <!-- Cart -->
-            <a href="cart.html" class="header-action-btn">
-              <i class="bi bi-cart3"></i>
-              <span class="badge">3</span>
-            </a>
 
             <!-- Mobile Navigation Toggle -->
             <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
@@ -164,11 +213,19 @@
       <div class="container-fluid container-xl position-relative">
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="index.html" class="active">الرئيسية</a></li>
             <li><a href="about.html">من نحن</a></li>
-            <li><a href="category.html">الفئات</a></li>
-       
-            
+            <li><a href="partener.html">شركاؤنا</a></li>
+            <li class="dropdown"><a href="#"><span>الفئات</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="category.html">السيارات</a></li>
+                <li><a href="category.html">الشقق والسكن</a></li>
+                <li><a href="category.html">الملابس</a></li>
+                <li><a href="category.html">الأدوات والمعدات</a></li>
+                <li><a href="category.html">الأثاث</a></li>
+              </ul>
+            </li>
+            <li><a href="how-it-works.html"></a></li>
             <li><a href="contact.html">اتصل بنا</a></li>
           </ul>
         </nav>
@@ -180,7 +237,7 @@
       <div class="container">
         <form class="search-form">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="ابحث عن المنتجات">
+            <input type="text" class="form-control" placeholder="ابحث عن ما تريد تأجيره...">
             <button class="btn" type="submit">
               <i class="bi bi-search"></i>
             </button>
@@ -188,7 +245,6 @@
         </form>
       </div>
     </div>
-
   </header>
 
   <main class="main">
@@ -208,9 +264,7 @@
 
     <!-- Register Section -->
     <section id="register" class="register section">
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row justify-content-center">
           <div class="col-lg-10">
             <div class="registration-form-wrapper">
@@ -222,36 +276,47 @@
               <div class="row">
                 <div class="col-lg-8 mx-auto">
                   <form action="register.php" method="post" enctype="multipart/form-data">
-                    <div class="form-floating mb-3">
-                      <input type="text" class="form-control" id="fullName" name="fullName" placeholder="الاسم الكامل" required="" autocomplete="name">
-                      <label for="fullName">الاسم الكامل</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                      <input type="email" class="form-control" id="email" name="email" placeholder="البريد الإلكتروني" required="" autocomplete="email">
-                      <label for="email">البريد الإلكتروني</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                      <input type="tel" class="form-control" id="phone" name="phone" placeholder="رقم الهاتف" required="" autocomplete="tel">
-                      <label for="phone">رقم الهاتف</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                      <input type="tel" class="form-control" id="phone" name="phone" placeholder="رقم الهاتف" required="" autocomplete="tel">
-                      <label for="phone">رقم واتساب الخاص بك</label>
+                    <!-- Personal Information Section -->
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <div class="form-floating">
+                          <input type="text" class="form-control" id="fullName" name="fullName" placeholder="الاسم الكامل" required autocomplete="name">
+                          <label for="fullName">الاسم الكامل</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-floating">
+                          <input type="email" class="form-control" id="email" name="email" placeholder="البريد الإلكتروني" required autocomplete="email">
+                          <label for="email">البريد الإلكتروني</label>
+                        </div>
+                      </div>
                     </div>
 
                     <div class="row mb-3">
                       <div class="col-md-6">
                         <div class="form-floating">
-                          <input type="password" class="form-control" id="password" name="password" placeholder="كلمة المرور" required="" minlength="8" autocomplete="new-password">
+                          <input type="tel" class="form-control" id="phone" name="phone" placeholder="رقم الهاتف" required autocomplete="tel">
+                          <label for="phone">رقم الهاتف</label>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-floating">
+                          <input type="tel" class="form-control" id="whatsapp" name="whatsapp" placeholder="رقم واتساب" required>
+                          <label for="whatsapp">رقم واتساب الخاص بك</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <div class="form-floating">
+                          <input type="password" class="form-control" id="password" name="password" placeholder="كلمة المرور" required minlength="8" autocomplete="new-password">
                           <label for="password">كلمة المرور</label>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-floating">
-                          <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="تأكيد كلمة المرور" required="" minlength="8" autocomplete="new-password">
+                          <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="تأكيد كلمة المرور" required minlength="8" autocomplete="new-password">
                           <label for="confirmPassword">تأكيد كلمة المرور</label>
                         </div>
                       </div>
@@ -260,54 +325,90 @@
                     <div class="row mb-3">
                       <div class="col-md-6">
                         <div class="form-floating">
-                          <select class="form-select" id="gender" name="gender" required="">
-                            <option value="" selected disabled>اختر الجنس</option>
+                          <select class="form-select" id="gender" name="gender" required>
+                            <option value="" selected disabled> الجنس</option>
                             <option value="male">ذكر</option>
                             <option value="female">أنثى</option>
+                          </select>
+                          
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-floating">
+                          <input type="date" class="form-control" id="birthDate" name="birthDate" required>
+                      
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Location Information Section -->
+                    <div class="row mb-3">
+                      <div class="col-md-6">
+                        <div class="form-floating">
+                          <select class="form-select" id="city" name="city" required>
+                            <option value="" selected disabled> المحافظة</option>
+                            <option value="cairo">القاهرة</option>
+                            <option value="alexandria">الإسكندرية</option>
+                            <option value="giza">الجيزة</option>
+                            <option value="sharqia">الشرقية</option>
+                            <option value="dakahlia">الدقهلية</option>
+                            <option value="beheira">البحيرة</option>
+                            <option value="monufia">المنوفية</option>
+                            <option value="qalyubia">القليوبية</option>
+                            <option value="sohag">سوهاج</option>
+                            <option value="asyut">أسيوط</option>
+                            <option value="luxor">الأقصر</option>
+                            <option value="aswan">أسوان</option>
+                            <option value="minya">المنيا</option>
+                            <option value="beni_suef">بني سويف</option>
+                            <option value="fayoum">الفيوم</option>
+                            <option value="gharbia">الغربية</option>
+                            <option value="ismailia">الإسماعيلية</option>
+                            <option value="port_said">بورسعيد</option>
+                            <option value="suez">السويس</option>
+                            <option value="damietta">دمياط</option>
+                            <option value="kafr_el_sheikh">كفر الشيخ</option>
+                            <option value="matrouh">مطروح</option>
+                            <option value="north_sinai">شمال سيناء</option>
+                            <option value="south_sinai">جنوب سيناء</option>
+                            <option value="new_valley">الوادي الجديد</option>
+                            <option value="red_sea">البحر الأحمر</option>
+                            <option value="qena">قنا</option>
                           </select>
                         
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-floating">
-                          <input type="date" class="form-control" id="birthDate" name="birthDate" placeholder="تاريخ الميلاد" required="">
-                          <!-- <label for="birthDate">تاريخ الميلاد</label> -->
+                          <input type="text" class="form-control" id="street" name="street" placeholder="اسم الشارع" required>
+                          <label for="street">اسم الشارع</label>
                         </div>
                       </div>
                     </div>
 
-                    <div class="row mb-3">
-                      <div class="col-md-6">
-                        <div class="form-floating">
-                          <input type="text" class="form-control" id="nationalId" name="nationalId" placeholder="رقم الهوية الوطنية" required="">
-                          <label for="nationalId">رقم الهوية الوطنية</label>
-                        </div>
-                      </div>
-                      <div class="mb-3">
-  <label for="address" class="form-label">العنوان بالتفصيل</label>
-  <input type="text" class="form-control" id="address" name="address" placeholder="اكتب العنوان الكامل مثل: شقة 12، شارع النصر، مدينة نصر، القاهرة">
-</div>
+                   
 
-<div class="mb-3">
-  <label class="form-label">الموقع على الخريطة</label>
-  <div id="map" style="height: 300px; border-radius: 10px;"></div>
-  <input type="hidden" name="latitude" id="latitude">
-  <input type="hidden" name="longitude" id="longitude">
-</div>
+                    <div class="mb-3">
+                      <label for="nationalId" class="form-label">رقم الهوية الوطنية</label>
+                      <input type="text" class="form-control" id="nationalId" name="nationalId" placeholder="رقم الهوية الوطنية" required>
+                    </div>
 
-
-
-                      
+                    <div class="mb-3">
+                      <label class="form-label">الموقع على الخريطة</label>
+                      <div id="map" style="height: 300px; border-radius: 10px; margin-bottom: 15px;"></div>
+                      <input type="hidden" name="latitude" id="latitude">
+                      <input type="hidden" name="longitude" id="longitude">
                     </div>
 
                     <div class="mb-3">
                       <label for="idCardImage" class="form-label">صورة الهوية الوطنية/جواز السفر</label>
-                      <input class="form-control" type="file" id="idCardImage" name="idCardImage" accept="image/*" required="">
+                      <input class="form-control" type="file" id="idCardImage" name="idCardImage" accept="image/*" required>
                       <div class="form-text">يرجى تحميل صورة واضحة للهوية الوطنية أو جواز السفر</div>
                     </div>
 
-                    <div class="form-check mb-4">
-                      <input class="form-check-input" type="checkbox" id="termsCheck" name="termsCheck" required="">
+                    <!-- Terms and Conditions -->
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="checkbox" id="termsCheck" name="termsCheck" required>
                       <label class="form-check-label" for="termsCheck">
                         أوافق على <a href="#">شروط الخدمة</a> و <a href="#">سياسة الخصوصية</a>
                       </label>
@@ -331,52 +432,19 @@
                 </div>
               </div>
 
-              <div class="social-login">
-                <div class="row">
-                  <div class="col-lg-8 mx-auto">
-                    <div class="divider">
-                      <span>أو سجل باستخدام</span>
-                    </div>
-                    <div class="social-buttons">
-                      <a href="#" class="btn btn-social">
-                        <i class="bi bi-google"></i>
-                        <span>جوجل</span>
-                      </a>
-                      <a href="#" class="btn btn-social">
-                        <i class="bi bi-facebook"></i>
-                        <span>فيسبوك</span>
-                      </a>
-                      <a href="#" class="btn btn-social">
-                        <i class="bi bi-apple"></i>
-                        <span>أبل</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="decorative-elements">
-                <div class="circle circle-1"></div>
-                <div class="circle circle-2"></div>
-                <div class="circle circle-3"></div>
-                <div class="square square-1"></div>
-                <div class="square square-2"></div>
-              </div>
+     
             </div>
           </div>
         </div>
-
       </div>
-
     </section><!-- /Register Section -->
-
   </main>
 
   <footer id="footer" class="footer dark-background">
     <div class="footer-main">
       <div class="container">
         <div class="row gy-4">
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up">
             <div class="footer-widget footer-about">
               <a href="index.html" class="logo">
                 <span class="sitename">إيجارك</span>
@@ -395,7 +463,7 @@
             </div>
           </div>
 
-          <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="col-lg-2 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="100">
             <div class="footer-widget">
               <h4>تصفح</h4>
               <ul class="footer-links">
@@ -409,39 +477,21 @@
             </div>
           </div>
 
-          <div class="col-lg-2 col-md-6 col-sm-6">
-            <div class="footer-widget">
-              <h4>الدعم</h4>
-              <ul class="footer-links">
-                <li><a href="support.html">الأسئلة الشائعة</a></li>
-                <li><a href="account.html">حجوزاتي</a></li>
-                <li><a href="shiping-info.html">شروط التأجير</a></li>
-                <li><a href="return-policy.html">سياسة الإرجاع</a></li>
-                <li><a href="#">الأسعار</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="footer-widget">
               <h4>معلومات الاتصال</h4>
               <div class="footer-contact">
                 <div class="contact-item">
                   <i class="bi bi-geo-alt"></i>
-                  
+                  <span>القاهرة - جمهورية مصر العربية</span>
                 </div>
                 <div class="contact-item">
                   <i class="bi bi-telephone"></i>
-                  <span>+966 12 345 6789</span>
+                  <span> +966 12 345 6789</span>
                 </div>
                 <div class="contact-item">
                   <i class="bi bi-envelope"></i>
-                  <span>info@ijarak.com</span>
-                </div>
-                <div class="contact-item">
-                  <i class="bi bi-clock"></i>
-                  <span>الأحد-الخميس: 8ص-5م<br>الجمعة-السبت: مغلق</span>
+                  <span> info@ijarak.com</span>
                 </div>
               </div>
             </div>
@@ -453,13 +503,13 @@
     <div class="footer-bottom">
       <div class="container">
         <div class="row gy-3 align-items-center">
-          <div class="col-lg-6 col-md-12">
+          <div class="col-lg-6 col-md-12" data-aos="fade-up">
             <div class="copyright">
               <p>© <span>حقوق النشر</span> <strong class="sitename">إيجارك</strong>. جميع الحقوق محفوظة.</p>
             </div>
           </div>
 
-          <div class="col-lg-6 col-md-12">
+          <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-delay="100">
             <div class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4">
               <div class="payment-methods">
                 <div class="payment-icons">
@@ -482,59 +532,12 @@
     </div>
   </footer>
 
+
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
-
-
-
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-  const map = L.map('map').setView([26.8206, 30.8025], 6); // Egypt
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
-
-  let marker;
-
-  const addressInput = document.getElementById('address');
-  const latInput = document.getElementById('latitude');
-  const lonInput = document.getElementById('longitude');
-
-  addressInput.addEventListener('blur', function () {
-    const address = addressInput.value;
-    if (!address.trim()) return;
-
-    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address + ', Egypt')}`;
-
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        if (data && data.length > 0) {
-          const result = data[0];
-          const lat = parseFloat(result.lat);
-          const lon = parseFloat(result.lon);
-
-          if (marker) map.removeLayer(marker);
-          marker = L.marker([lat, lon]).addTo(map);
-          map.setView([lat, lon], 15);
-
-          latInput.value = lat;
-          lonInput.value = lon;
-        } else {
-          alert('لم يتم العثور على هذا العنوان، يرجى التأكد من كتابته بشكل صحيح.');
-        }
-      })
-      .catch(error => {
-        alert('حدث خطأ أثناء محاولة تحديد الموقع. حاول مرة أخرى.');
-        console.error(error);
-      });
-  });
-</script>
-
-
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -547,6 +550,109 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-</body>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Initialize the map centered on Egypt
+    const map = L.map('map').setView([26.8206, 30.8025], 6);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
+    let marker;
+    const cityCoordinates = {
+      cairo: [30.0444, 31.2357],
+      alexandria: [31.2001, 29.9187],
+      giza: [29.9870, 31.2118],
+      sharqia: [30.7320, 31.7690],
+      dakahlia: [31.0500, 31.3833],
+      beheira: [30.8481, 30.3435],
+      monufia: [30.5972, 30.9876],
+      qalyubia: [30.4106, 31.2057],
+      sohag: [26.5569, 31.6948],
+      asyut: [27.1783, 31.1859],
+      luxor: [25.6872, 32.6396],
+      aswan: [24.0889, 32.8998],
+      minya: [28.1099, 30.7503],
+      beni_suef: [29.0667, 31.0833],
+      fayoum: [29.3084, 30.8428],
+      gharbia: [30.8754, 31.0335],
+      ismailia: [30.6043, 32.2723],
+      port_said: [31.2565, 32.2841],
+      suez: [29.9737, 32.5263],
+      damietta: [31.4167, 31.8133],
+      kafr_el_sheikh: [31.1117, 30.9399],
+      matrouh: [31.3500, 27.2333],
+      north_sinai: [30.2829, 33.6176],
+      south_sinai: [28.5333, 34.1667],
+      new_valley: [25.4400, 30.5500],
+      red_sea: [25.5404, 33.9975],
+      qena: [26.1644, 32.7267]
+    };
+
+    // Handle city selection change
+    document.getElementById('city').addEventListener('change', function() {
+      const selectedCity = this.value;
+      if (selectedCity && cityCoordinates[selectedCity]) {
+        const [lat, lon] = cityCoordinates[selectedCity];
+        if (marker) map.removeLayer(marker);
+        marker = L.marker([lat, lon]).addTo(map);
+        map.setView([lat, lon], 12);
+        
+        // Update hidden inputs
+        document.getElementById('latitude').value = lat;
+        document.getElementById('longitude').value = lon;
+      }
+    });
+
+    // Handle map clicks
+    map.on('click', function(e) {
+      if (marker) map.removeLayer(marker);
+      marker = L.marker(e.latlng).addTo(map);
+      
+      // Update hidden inputs
+      document.getElementById('latitude').value = e.latlng.lat;
+      document.getElementById('longitude').value = e.latlng.lng;
+      
+      // Reverse geocode to get address
+      fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${e.latlng.lat}&lon=${e.latlng.lng}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.display_name) {
+            document.getElementById('address').value = data.display_name;
+          }
+        });
+    });
+
+    // Handle address input for geocoding
+    document.getElementById('address').addEventListener('blur', function() {
+      const address = this.value;
+      if (!address.trim()) return;
+
+      const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address + ', Egypt')}`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          if (data && data.length > 0) {
+            const result = data[0];
+            const lat = parseFloat(result.lat);
+            const lon = parseFloat(result.lon);
+
+            if (marker) map.removeLayer(marker);
+            marker = L.marker([lat, lon]).addTo(map);
+            map.setView([lat, lon], 15);
+
+            document.getElementById('latitude').value = lat;
+            document.getElementById('longitude').value = lon;
+          } else {
+            alert('لم يتم العثور على هذا العنوان، يرجى التأكد من كتابته بشكل صحيح.');
+          }
+        })
+        .catch(error => {
+          alert('حدث خطأ أثناء محاولة تحديد الموقع. حاول مرة أخرى.');
+          console.error(error);
+        });
+    });
+  </script>
+</body>
 </html>
