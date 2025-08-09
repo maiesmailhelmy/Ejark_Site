@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title> إيجارك - الفئات</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/drift-zoom/drift-basic.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+<style>
+.btn-primary {
+  background-color: black;
+  border-color: black;
+  color: white;
+  height: 50px;
+  transition: all 0.3s ease-in-out; /* حركة سلسة */
+}
+
+.btn-primary:hover {
+  box-shadow: 0 4px 15px rgb(128, 128, 128); /* ظل ناعم */
+  transform: translateY(-5px); /* حركة لأعلى */
+}
+
+.addproduct-form-wrapper{
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 32px;
+  margin-top: 32px;
+}
+.addproduct-form-wrapper:hover {
+  box-shadow: 0 4px 15px var(--accent-color); /* ظل ناعم */
+  transform: translateY(-10px); /* حركة لأعلى */
+}
+
+
+</style>
+</head>
+
+
+<body class="register-page">
+
+  <header id="header" class="header sticky-top">
+    <!-- Top Bar -->
+    <div class="top-bar py-2">
+      <div class="container-fluid container-xl">
+        <div class="row align-items-center">
+          <div class="col-lg-4 d-none d-lg-flex">
+        
+          </div>
+
+          <div class="col-lg-4 col-md-12 text-center">
+            <div class="announcement-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": 1,
+                  "direction": "vertical",
+                  "effect": "slide"
+                }
+              </script>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">🚚  توصيل مجاني للطلبات فوق 2000 جينه مصري</div>
+                <div class="swiper-slide">🎁 خصم 5% على أول حجز</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 d-none d-lg-block">
+            
+             
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header">
+      <div class="container-fluid container-xl">
+        <div class="d-flex py-3 align-items-center justify-content-between">
+
+          <!-- Logo -->
+          <a href="index.html" class="logo d-flex align-items-center">
+            <h4 class="sitename" style="font-size:70px ;">إيجارك</h4>
+          </a>
+
+          <!-- Search -->
+          <form class="search-form desktop-search-form">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="ابحث عن المنتجات">
+              <button class="btn" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+
+          <!-- Actions -->
+          <div class="header-actions d-flex align-items-center justify-content-end">
+
+            <!-- Mobile Search Toggle -->
+            <button class="header-action-btn mobile-search-toggle d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
+              <i class="bi bi-search"></i>
+            </button>
+
+            <!-- Account -->
+            <div class="dropdown account-dropdown">
+              <button class="header-action-btn" data-bs-toggle="dropdown">
+                <i class="bi bi-person"></i>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">
+                  <h6>مرحبًا بك في <span class="sitename">NiceShop</span></h6>
+                  <p class="mb-0">الوصول إلى الحساب وإدارة الطلبات</p>
+                </div>
+                <div class="dropdown-body">
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-person-circle me-2"></i>
+                    <span>ملفي الشخصي</span>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-bag-check me-2"></i>
+                    <span>طلباتي</span>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-heart me-2"></i>
+                    <span>قائمة الرغبات</span>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-gear me-2"></i>
+                    <span>الإعدادات</span>
+                  </a>
+                </div>
+                <div class="dropdown-footer">
+                  <a href="register.html" class="btn btn-primary w-100 mb-2">تسجيل الدخول</a>
+                  <a href="login.html" class="btn btn-outline-primary w-100">إنشاء حساب</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wishlist -->
+            <a href="account.html" class="header-action-btn d-none d-md-block">
+              <i class="bi bi-heart"></i>
+              <span class="badge">0</span>
+            </a>
+
+            <!-- Cart -->
+            <a href="cart.html" class="header-action-btn">
+              <i class="bi bi-cart3"></i>
+              <span class="badge">3</span>
+            </a>
+
+            <!-- Mobile Navigation Toggle -->
+            <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="header-nav">
+      <div class="container-fluid container-xl position-relative">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="category.html">الفئات</a></li>
+       
+            
+            <li><a href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Mobile Search Form -->
+    <div class="collapse" id="mobileSearch">
+      <div class="container">
+        <form class="search-form">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="ابحث عن المنتجات">
+            <button class="btn" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </header>
+
+<section id="add-product" class="register section">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="addproduct-form-wrapper">
+          <div class="form-header text-center">
+            <h2>إضافة منتج جديد</h2>
+            <p>قم بإضافة منتجك وابدأ في عرضه للتأجير</p>
+          </div>
+          <form>
+            <!-- اسم المنتج -->
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="اسم المنتج" required>
+            </div>
+          <!-- اختيار الفئة -->
+          <div class="mb-3">
+  <select class="form-control" id="productCategory" required>
+    <option value="" disabled selected>اختر فئة المنتج</option>
+    <option value="cars">🚗 السيارات</option>
+    <option value="real-estate">🏠 عقارات ومساكن</option>
+    <option value="clothes">👗 ملابس</option>
+    <option value="tools">🛠️ أدوات ومعدات</option>
+  </select>
+</div>
+
+
+            <!-- وصف المنتج -->
+            <div class="mb-3">
+              <textarea class="form-control" rows="4" placeholder="وصف المنتج" required></textarea>
+            </div>
+
+            <!-- رفع الصور -->
+            <div class="mb-3">
+              <input type="file" class="form-control" multiple accept="image/*" required>
+            </div>
+
+            <!-- زر الإرسال -->
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary w-1000" style="background-color: black; height: 50px ;">رفع المنتج</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      
+<footer id="footer" class="footer dark-background">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget footer-about">
+              <a href="index.html" class="logo">
+                <span class="sitename">إيجارك</span>
+              </a>
+              <p>منصة إيجارك هي الحل الأمثل لتأجير كل ما تحتاجه أو كسب المال من تأجير ممتلكاتك. نوفر تجربة آمنة وسهلة للجميع.</p>
+
+              <div class="social-links mt-4">
+                <h5>تواصل معنا</h5>
+                <div class="social-icons">
+                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" aria-label="Snapchat"><i class="bi bi-snapchat"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>تصفح</h4>
+              <ul class="footer-links">
+                <li><a href="category.html">السيارات</a></li>
+                <li><a href="category.html">الشقق والسكن</a></li>
+                <li><a href="category.html">الملابس</a></li>
+                <li><a href="category.html">الأدوات</a></li>
+                <li><a href="category.html">الأثاث</a></li>
+                <li><a href="category.html">عروض خاصة</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>الدعم</h4>
+              <ul class="footer-links">
+                <li><a href="support.html">الأسئلة الشائعة</a></li>
+                <li><a href="account.html">حجوزاتي</a></li>
+                <li><a href="shiping-info.html">شروط التأجير</a></li>
+                <li><a href="return-policy.html">سياسة الإرجاع</a></li>
+                <li><a href="#">الأسعار</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget">
+              <h4>معلومات الاتصال</h4>
+              <div class="footer-contact">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <span>+966 12 345 6789</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <span>info@ijarak.com</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-clock"></i>
+                  <span>الأحد-الخميس: 8ص-5م<br>الجمعة-السبت: مغلق</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row gy-3 align-items-center">
+          <div class="col-lg-6 col-md-12">
+            <div class="copyright">
+              <p>© <span>حقوق النشر</span> <strong class="sitename">إيجارك</strong>. جميع الحقوق محفوظة.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4">
+              <div class="payment-methods">
+                <div class="payment-icons">
+                  <i class="bi bi-credit-card" aria-label="Credit Card"></i>
+                  <i class="bi bi-paypal" aria-label="PayPal"></i>
+                  <i class="bi bi-apple" aria-label="Apple Pay"></i>
+                  <i class="bi bi-google" aria-label="Google Pay"></i>
+                  <i class="bi bi-cash" aria-label="Cash on Delivery"></i>
+                </div>
+              </div>
+
+              <div class="legal-links">
+                <a href="tos.html">الشروط</a>
+                <a href="privacy.html">الخصوصية</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  const map = L.map('map').setView([26.8206, 30.8025], 6); // Egypt
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  let marker;
+
+  const addressInput = document.getElementById('address');
+  const latInput = document.getElementById('latitude');
+  const lonInput = document.getElementById('longitude');
+
+  addressInput.addEventListener('blur', function () {
+    const address = addressInput.value;
+    if (!address.trim()) return;
+
+    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address + ', Egypt')}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        if (data && data.length > 0) {
+          const result = data[0];
+          const lat = parseFloat(result.lat);
+          const lon = parseFloat(result.lon);
+
+          if (marker) map.removeLayer(marker);
+          marker = L.marker([lat, lon]).addTo(map);
+          map.setView([lat, lon], 15);
+
+          latInput.value = lat;
+          lonInput.value = lon;
+        } else {
+          alert('لم يتم العثور على هذا العنوان، يرجى التأكد من كتابته بشكل صحيح.');
+        }
+      })
+      .catch(error => {
+        alert('حدث خطأ أثناء محاولة تحديد الموقع. حاول مرة أخرى.');
+        console.error(error);
+      });
+  });
+</script>
+
+
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title> إيجارك - من نحن</title>
+  <meta name="description" content="تعرف على قصة منصة إيجارك الرائدة في مجال تأجير المنتجات في مصر">
+  <meta name="keywords" content="من نحن, عن إيجارك, تأجير منتجات مصر, اقتصاد تشاركي">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+
+  
+  <style>
+    :root {
+      --background-color: #ffffff;
+      --default-color: #444444;
+      --heading-color: #000000;
+      --accent-color: #252223;
+      --surface-color: #ffffff;
+      --contrast-color: #ffffff;
+      --nav-color: rgba(255, 255, 255, 0.8);
+      --nav-hover-color: #ffffff;
+      --nav-mobile-background-color: #ffffff;
+      --nav-dropdown-background-color: #ffffff;
+      --nav-dropdown-color: #444444;
+      --nav-dropdown-hover-color: #252223;
+    }
+    
+    body {
+      font-family: 'Tajawal', sans-serif;
+      line-height: 1.8;
+      color: var(--default-color);
+      background-color: var(--background-color);
+    }
+    
+    .hero-section {
+      background: linear-gradient(rgba(37, 34, 35, 0.9), rgba(37, 34, 35, 0.9)), url('assets/img/about-hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--contrast-color);
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-section h1 {
+      font-size: 3.5rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+    
+    .about-section {
+      padding: 100px 0;
+      background-color: var(--background-color);
+      position: relative;
+    }
+    
+    .about-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .about-section p {
+      font-size: 1.1rem;
+      margin-bottom: 1.8rem;
+      color: var(--default-color);
+      line-height: 1.9;
+    }
+    
+    .mission-statement {
+      background-color: var(--surface-color);
+      padding: 80px 0;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: var(--default-color);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .mission-statement .lead {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    
+    .stats-section {
+      padding: 80px 0;
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      position: relative;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--contrast-color);
+      margin-bottom: 15px;
+      display: inline-block;
+      position: relative;
+    }
+    
+    .stat-number:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: var(--contrast-color);
+    }
+    
+    .stat-label {
+      font-size: 1.3rem;
+      color: var(--contrast-color);
+      margin-top: 20px;
+    }
+    
+    .section-title {
+      position: relative;
+      margin-bottom: 60px;
+      font-weight: 700;
+      color: var(--heading-color);
+      font-size: 2.5rem;
+    }
+    
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      right: 0;
+      width: 100px;
+      height: 4px;
+      background: var(--accent-color);
+    }
+    
+    .section-title.text-center::after {
+      right: 50%;
+      transform: translateX(50%);
+    }
+    
+    .btn-custom {
+      padding: 12px 35px;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+      font-size: 1.1rem;
+    }
+    
+    .btn-primary-custom {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+    }
+    
+    .btn-primary-custom:hover {
+      background-color: transparent;
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .btn-outline-custom {
+      background-color: transparent;
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+    
+    .btn-outline-custom:hover {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    strong {
+      color: var(--heading-color);
+    }
+    
+    .cta-section {
+      padding: 80px 0;
+      background-color: #f8f9fa;
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      margin-bottom: 20px;
+    }
+    
+    .feature-box {
+      padding: 40px 30px;
+      border-radius: 10px;
+      background-color: var(--surface-color);
+      box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+      height: 100%;
+    }
+    
+    .feature-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    .feature-box h3 {
+      color: var(--heading-color);
+      margin-bottom: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 80px 0;
+      }
+      
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .stat-number {
+        font-size: 2.5rem;
+      }
+      
+      .stat-label {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="about-page">
+
+<header id="header" class="header sticky-top">
+    <!-- Top Bar -->
+    <div class="top-bar py-2">
+      <div class="container-fluid container-xl">
+        <div class="row align-items-center">
+          <div class="col-lg-4 d-none d-lg-flex">
+        
+          </div>
+
+          <div class="col-lg-4 col-md-12 text-center">
+            <div class="announcement-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": 1,
+                  "direction": "vertical",
+                  "effect": "slide"
+                }
+              </script>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">🚚  توصيل مجاني للطلبات فوق 2000 جينه مصري</div>
+                <div class="swiper-slide">🎁 خصم 5% على أول حجز</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 d-none d-lg-block">
+            
+             
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header">
+      <div class="container-fluid container-xl">
+        <div class="d-flex py-3 align-items-center justify-content-between">
+
+          <!-- Logo -->
+          <a href="index.html" class="logo d-flex align-items-center">
+            <h1 class="sitename" style="font-size:70px ;">إيجارك</h1>
+          </a>
+
+          <!-- Search -->
+          <form class="search-form desktop-search-form">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="ابحث عن المنتجات">
+              <button class="btn" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+
+          <!-- Actions -->
+          <div class="header-actions d-flex align-items-center justify-content-end">
+
+            <!-- Mobile Search Toggle -->
+            <button class="header-action-btn mobile-search-toggle d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
+              <i class="bi bi-search"></i>
+            </button>
+
+            <!-- Account -->
+            <div class="dropdown account-dropdown">
+              <button class="header-action-btn" data-bs-toggle="dropdown">
+                <i class="bi bi-person"></i>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">
+                  <h6>مرحبًا بك في <span class="sitename">NiceShop</span></h6>
+                  <p class="mb-0">الوصول إلى الحساب وإدارة الطلبات</p>
+                </div>
+                <div class="dropdown-body">
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-person-circle me-2"></i>
+                    <span>ملفي الشخصي</span>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-bag-check me-2"></i>
+                    <span>طلباتي</span>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-heart me-2"></i>
+                    <span>قائمة الرغبات</span>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-gear me-2"></i>
+                    <span>الإعدادات</span>
+                  </a>
+                </div>
+                <div class="dropdown-footer">
+                  <a href="register.html" class="btn btn-primary w-100 mb-2">تسجيل الدخول</a>
+                  <a href="login.html" class="btn btn-outline-primary w-100">إنشاء حساب</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wishlist -->
+            <a href="account.html" class="header-action-btn d-none d-md-block">
+              <i class="bi bi-heart"></i>
+              <span class="badge">0</span>
+            </a>
+
+            <!-- Cart -->
+            <a href="cart.html" class="header-action-btn">
+              <i class="bi bi-cart3"></i>
+              <span class="badge">3</span>
+            </a>
+
+            <!-- Mobile Navigation Toggle -->
+            <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="header-nav">
+      <div class="container-fluid container-xl position-relative">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="category.html">الفئات</a></li>
+       
+            
+            <li><a href="contact.html">اتصل بنا</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Mobile Search Form -->
+    <div class="collapse" id="mobileSearch">
+      <div class="container">
+        <form class="search-form">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="ابحث عن المنتجات">
+            <button class="btn" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section text-center d-flex align-items-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="zoom-in">
+          <h1 class="display-4 fw-bold mb-4">من نحن</h1>
+          <p class="lead mb-5">قصة منصة إيجارك والرؤية التي تقف خلف خدمتنا</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Content Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-content" data-aos="fade-up">
+        <h2 class="section-title text-center">قصتنا</h2>
+        
+        <p class="text-center mb-5">
+          نؤمن بأن مشاركة الموارد هي مستقبل الاقتصاد في مصر والعالم العربي
+        </p>
+        
+        <p>
+          في ظل التغيرات الاقتصادية وارتفاع الأسعار الذي نعيشه في مصر، لاحظنا أن الكثير من الناس يواجهون صعوبة في شراء الأشياء التي يحتاجونها، ولو لفترة قصيرة فقط. ومن هنا جاءت فكرتنا.
+        </p>
+
+        <p>
+          أطلقنا منصة <strong>إيجارك</strong> في عام <strong>2025</strong> بهدف تقديم حل عملي واقتصادي: أي شخص يستطيع أن يستخدم المنتج الذي يحتاجه دون أن يشتريه بسعر باهظ، بل يمكنه ببساطة تأجيره من شخص آخر عبر منصتنا.
+        </p>
+
+        <p>
+          سواء كنت ترغب في تأجير شيء تمتلكه، أو تبحث عن منتج لتستأجره، فـ <strong>إيجارك</strong> هو المكان المناسب لك. نؤمن بأن الثقة والأمان هما أساس التعامل بين المؤجر والمستأجر، ونعمل باستمرار على تطوير المنصة لنقدم تجربة سهلة وآمنة للجميع.
+        </p>
+
+        <p>
+          هدفنا هو أن نصل بـ <strong>إيجارك</strong> إلى كل بيت في مصر، وأن نصبح المنصة الأولى للتأجير بين الأفراد، حيث يستطيع الجميع الاستفادة بأقل التكاليف، وبأعلى درجات الراحة والثقة.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="feature-box text-center">
+            <div class="feature-icon">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h3>آمن وموثوق</h3>
+            <p>نضمن لك تجربة آمنة مع أنظمة تحقق متقدمة وتقييمات حقيقية</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-box text-center">
+            <div class="feature-icon">
+              <i class="bi bi-currency-exchange"></i>
+            </div>
+            <h3>توفير مالي</h3>
+            <p>وفر ما يصل إلى 80% من تكلفة شراء المنتجات التي تحتاجها مؤقتًا</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-box text-center">
+            <div class="feature-icon">
+              <i class="bi bi-people"></i>
+            </div>
+            <h3>مجتمع متكامل</h3>
+            <p>انضم إلى آلاف المستخدمين الذين يعتمدون علينا يوميًا</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Statement -->
+  <section class="mission-statement">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="fade-up">
+          <p class="lead mb-0">
+            <i class="bi bi-quote fs-1 d-block mb-4" style="color: var(--accent-color);"></i>
+            إيجارك – لأنك مش دايمًا محتاج تشتري، بس دايمًا محتاج تستخدم.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <h2 class="section-title text-center text-white">إيجارك في أرقام</h2>
+      
+      <div class="row text-center">
+        <div class="col-md-3 col-6">
+          <div class="stat-item" data-aos="fade-up">
+            <div class="stat-number" data-count="10000">0</div>
+            <div class="stat-label">منتج متاح</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-number" data-count="5000">0</div>
+            <div class="stat-label">عميل سعيد</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-number" data-count="2000">0</div>
+            <div class="stat-label">مزود خدمة</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-number" data-count="95">0</div>
+            <div class="stat-label">رضا العملاء</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2 class="mb-4">انضم إلى مجتمع إيجارك اليوم</h2>
+      <p class="mb-5">سجل الآن وابدأ رحلتك مع أكبر منصة تأجير في مصر</p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="register.html" class="btn btn-primary-custom btn-custom">سجل كعميل</a>
+        <a href="renter_register.html" class="btn btn-outline-custom btn-custom">سجل كمزود خدمة</a>
+      </div>
+    </div>
+  </section>
+
+<footer id="footer" class="footer dark-background">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget footer-about">
+              <a href="index.html" class="logo">
+                <span class="sitename">إيجارك</span>
+              </a>
+              <p>منصة إيجارك هي الحل الأمثل لتأجير كل ما تحتاجه أو كسب المال من تأجير ممتلكاتك. نوفر تجربة آمنة وسهلة للجميع.</p>
+
+              <div class="social-links mt-4">
+                <h5>تواصل معنا</h5>
+                <div class="social-icons">
+                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" aria-label="Snapchat"><i class="bi bi-snapchat"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>تصفح</h4>
+              <ul class="footer-links">
+                <li><a href="category.html">السيارات</a></li>
+                <li><a href="category.html">الشقق والسكن</a></li>
+                <li><a href="category.html">الملابس</a></li>
+                <li><a href="category.html">الأدوات</a></li>
+                <li><a href="category.html">الأثاث</a></li>
+                <li><a href="category.html">عروض خاصة</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>الدعم</h4>
+              <ul class="footer-links">
+                <li><a href="support.html">الأسئلة الشائعة</a></li>
+                <li><a href="account.html">حجوزاتي</a></li>
+                <li><a href="shiping-info.html">شروط التأجير</a></li>
+                <li><a href="return-policy.html">سياسة الإرجاع</a></li>
+                <li><a href="#">الأسعار</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget">
+              <h4>معلومات الاتصال</h4>
+              <div class="footer-contact">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <span>+966 12 345 6789</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <span>info@ijarak.com</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-clock"></i>
+                  <span>الأحد-الخميس: 8ص-5م<br>الجمعة-السبت: مغلق</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row gy-3 align-items-center">
+          <div class="col-lg-6 col-md-12">
+            <div class="copyright">
+              <p>© <span>حقوق النشر</span> <strong class="sitename">إيجارك</strong>. جميع الحقوق محفوظة.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4">
+              <div class="payment-methods">
+                <div class="payment-icons">
+                  <i class="bi bi-credit-card" aria-label="Credit Card"></i>
+                  <i class="bi bi-paypal" aria-label="PayPal"></i>
+                  <i class="bi bi-apple" aria-label="Apple Pay"></i>
+                  <i class="bi bi-google" aria-label="Google Pay"></i>
+                  <i class="bi bi-cash" aria-label="Cash on Delivery"></i>
+                </div>
+              </div>
+
+              <div class="legal-links">
+                <a href="tos.html">الشروط</a>
+                <a href="privacy.html">الخصوصية</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Counter animation for stats
+    document.addEventListener('DOMContentLoaded', function() {
+      const counters = document.querySelectorAll('.stat-number');
+      const speed = 200;
+      const statsSection = document.querySelector('.stats-section');
+      
+      // Only start counting when stats section is in view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            counters.forEach(counter => {
+              const target = +counter.getAttribute('data-count');
+              const count = +counter.innerText;
+              const increment = target / speed;
+              
+              const updateCount = () => {
+                const count = +counter.innerText;
+                
+                if(count < target) {
+                  counter.innerText = Math.ceil(count + increment);
+                  setTimeout(updateCount, 10);
+                } else {
+                  counter.innerText = target;
+                }
+              };
+              
+              updateCount();
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {threshold: 0.5});
+      
+      observer.observe(statsSection);
+      
+      // Animation on scroll
+      AOS.init({
+        duration: 1000,
+        once: true,
+        easing: 'ease-in-out'
+      });
+    });
+  </script>
+</body>
+
+</html>

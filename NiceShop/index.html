@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>إيجارك - منصة التأجير الأولى</title>
+  <meta name="description" content="منصة إيجارك لتأجير كل ما تحتاجه من سيارات، شقق، ملابس وأدوات">
+  <meta name="keywords" content="تأجير, إيجار, سيارات, شقق, ملابس, أدوات">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/drift-zoom/drift-basic.css" rel="stylesheet">
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header sticky-top">
+    <!-- Top Bar -->
+    <div class="top-bar py-2">
+      <div class="container-fluid container-xl">
+        <div class="row align-items-center">
+          <div class="col-lg-4 d-none d-lg-flex">
+            <div class="top-bar-item">
+           
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-12 text-center">
+            <div class="announcement-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": 1,
+                  "direction": "vertical",
+                  "effect": "slide"
+                }
+              </script>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">🚚  توصيل مجاني للطلبات فوق 2000 جينه مصري</div>
+                <div class="swiper-slide">🎁 خصم 5% على أول حجز</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 d-none d-lg-block">
+            <div class="d-flex justify-content-end">
+             
+         
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header">
+      <div class="container-fluid container-xl">
+        <div class="d-flex py-3 align-items-center justify-content-between">
+
+          <!-- Logo -->
+          <a href="index.html" class="logo d-flex align-items-center">
+            <h1 class="sitename">إيجارك</h1>
+          </a>
+
+          <!-- Search -->
+          <form class="search-form desktop-search-form">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="ابحث عن ما تريد تأجيره...">
+              <button class="btn" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+
+          <!-- Actions -->
+          <div class="header-actions d-flex align-items-center justify-content-end">
+
+            <!-- Mobile Search Toggle -->
+            <button class="header-action-btn mobile-search-toggle d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSearch" aria-expanded="false" aria-controls="mobileSearch">
+              <i class="bi bi-search"></i>
+            </button>
+
+            <!-- Account -->
+            <div class="dropdown account-dropdown">
+              <button class="header-action-btn" data-bs-toggle="dropdown">
+                <i class="bi bi-person"></i>
+              </button>
+              <div class="dropdown-menu">
+                <div class="dropdown-header">
+                  <h6>مرحبًا بك في <span class="sitename">إيجارك</span></h6>
+                  <p class="mb-0">إدارة الحساب والطلبات</p>
+                </div>
+                <div class="dropdown-body">
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-person-circle me-2"></i>
+                    <span>ملفي الشخصي</span>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-bag-check me-2"></i>
+                    <span>حجوزاتي</span>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-heart me-2"></i>
+                    <span>المفضلة</span>
+                  </a>
+                  <a class="dropdown-item d-flex align-items-center" href="account.html">
+                    <i class="bi bi-gear me-2"></i>
+                    <span>الإعدادات</span>
+                  </a>
+                </div>
+                <div class="dropdown-footer">
+                  <a href="register.html" class="btn btn-primary w-100 mb-2">تسجيل الدخول</a>
+                  <a href="login.html" class="btn btn-outline-primary w-100">إنشاء حساب</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wishlist -->
+            <a href="account.html" class="header-action-btn d-none d-md-block">
+              <i class="bi bi-heart"></i>
+              <span class="badge">0</span>
+            </a>
+
+            <!-- Cart -->
+            <a href="cart.html" class="header-action-btn">
+              <i class="bi bi-cart3"></i>
+              <span class="badge">3</span>
+            </a>
+
+            <!-- Mobile Navigation Toggle -->
+            <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="header-nav">
+      <div class="container-fluid container-xl position-relative">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html" class="active">الرئيسية</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="partener.html">شركاؤنا</a></li>
+            <li class="dropdown"><a href="#"><span>الفئات</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="category.html">السيارات</a></li>
+                <li><a href="category.html">الشقق والسكن</a></li>
+                <li><a href="category.html">الملابس</a></li>
+                <li><a href="category.html">الأدوات والمعدات</a></li>
+                <li><a href="category.html">الأثاث</a></li>
+              </ul>
+            </li>
+            <li><a href="how-it-works.html">كيف يعمل</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Mobile Search Form -->
+    <div class="collapse" id="mobileSearch">
+      <div class="container">
+        <form class="search-form">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="ابحث عن ما تريد تأجيره...">
+            <button class="btn" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="main">
+
+<!-- Hero Section -->
+<section id="hero" class="hero-section">
+  <div class="hero-swiper swiper">
+    <div class="swiper-wrapper">
+      
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="slide-container container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-1 order-2">
+              <div class="hero-content">
+                <h1 class="hero-title">اكتشف عالمًا من الخيارات للتأجير</h1>
+                <p class="hero-description">منصة إيجارك توفر لك كل ما تحتاجه من سيارات، شقق، ملابس وأدوات بتجربة سهلة وآمنة وبأسعار تنافسية</p>
+                
+                <div class="features-list">
+                  <div class="feature-item">
+                    <i class="bi bi-shield-check"></i>
+                    <div>
+                      <h4>ضمان آمن</h4>
+                      <p>حماية كاملة لجميع عمليات التأجير</p>
+                    </div>
+                  </div>
+                  
+                  <div class="feature-item">
+                    <i class="bi bi-coin"></i>
+                    <div>
+                      <h4>أسعار تنافسية</h4>
+                      <p>أفضل الأسعار في السوق</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="hero-actions">
+                  <!-- <a href="#categories" class="btn btn-primary">استعرض العروض</a> -->
+                  <a href="#how-it-works" class="btn-outline-primary">كيفية التأجير</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 order-lg-2 order-1">
+              <div class="hero-visuals">
+                <img src="assets/img/product/car.png" class="img-fluid main-image" alt="تأجير سيارات">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="slide-container container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-1 order-2">
+              <div class="hero-content">
+                <h1 class="hero-title">استأجر شقتك بسهولة وأمان</h1>
+                <p class="hero-description">نوفر لك شقق مجهزة للإيجار الشهري أو اليومي بأفضل الأسعار</p>
+                
+                <div class="features-list">
+                  <div class="feature-item">
+                    <i class="bi bi-house-door"></i>
+                    <div>
+                      <h4>خيارات متنوعة</h4>
+                      <p>شقق بمواصفات مختلفة تناسب جميع الاحتياجات</p>
+                    </div>
+                  </div>
+                  
+                  <div class="feature-item">
+                    <i class="bi bi-key"></i>
+                    <div>
+                      <h4>تأجير مباشر</h4>
+                      <p>بدون وسيط وبأسعار مناسبة</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="hero-actions">
+                  <!-- <a href="#categories" class="btn btn-primary">شاهد الشقق</a> -->
+                  <a href="#how-it-works" class="btn-outline-primary">اعرف الطريقة</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 order-lg-2 order-1">
+              <div class="hero-visuals">
+                <img src="assets/img/product/House.jpg" class="img-fluid main-image" alt="تأجير شقق">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <div class="slide-container container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-1 order-2">
+              <div class="hero-content">
+                <h1 class="hero-title">احجز ملابسك للمناسبات بكل سهولة</h1>
+                <p class="hero-description">ملابس فاخرة ومتنوعة للإيجار اليومي أو الأسبوعي</p>
+                
+                <div class="features-list">
+                  <div class="feature-item">
+                    <i class="bi bi-bag"></i>
+                    <div>
+                      <h4>تصاميم مميزة</h4>
+                      <p>أحدث صيحات الموضة من مصممين معروفين</p>
+                    </div>
+                  </div>
+                  
+                  <div class="feature-item">
+                    <i class="bi bi-truck"></i>
+                    <div>
+                      <h4>توصيل سريع</h4>
+                      <p>استلم طلبك في المكان والوقت المناسبين</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="hero-actions">
+                  <!-- <a href="#categories" class="btn btn-primary">تصفح الملابس</a> -->
+                  <a href="#how-it-works" class="btn-outline-primary">كيف يتم الحجز؟</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-6 order-lg-2 order-1">
+              <div class="hero-visuals">
+                <img src="assets/img/product/Dress.jpg" class="img-fluid main-image" alt="تأجير ملابس">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Navigation -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+<style>
+.hero-section {
+  height: 120vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-swiper {
+  height: 100%;
+}
+
+.swiper-slide {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.slide-container {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-content {
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.hero-visuals {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-visuals img {
+  transform: scale(1.4);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+.features-list {
+  margin: 2rem 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-item i {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+.feature-item h4 {
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+}
+
+.feature-item p {
+  color: #666;
+  margin: 0;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Swiper Navigation */
+.swiper-pagination {
+  position: absolute;
+  bottom: 3rem !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #333;
+  background: rgba(255,255,255,0.7);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.5rem;
+}
+</style>
+
+<script>
+const heroSwiper = new Swiper('.hero-swiper', {
+  loop: true,
+  speed: 800,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  effect: 'slide',
+});
+</script>
+<!-- /Hero Section -->
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>فئات التأجير</h2>
+        <p>اختر من بين مجموعة واسعة من العناصر المتاحة للتأجير</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4">
+          
+           
+
+        <section id="hero" data-aos="fade-up">
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      
+      <div class="col-lg-3 col-md-6">
+        <div class="category-card">
+          <div class="category-image">
+            <img src="assets/img/product/car.png" alt="السيارات" class="img-fluid">
+          </div>
+          <div class="category-content">
+            <h3>السيارات</h3>
+            <a href="category.html" class="btn btn-outline-primary">استعرض العروض</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="category-card">
+          <div class="category-image">
+            <img src="assets/img/product/House.jpg" alt="الشقق والسكن" class="img-fluid">
+          </div>
+          <div class="category-content">
+            <h3>الشقق والسكن</h3>
+            <a href="category.html" class="btn btn-outline-primary">استعرض العروض</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="category-card">
+          <div class="category-image">
+            <img src="assets/img/product/Dress.jpg" alt="الملابس" class="img-fluid">
+          </div>
+          <div class="category-content">
+            <h3>الملابس</h3>
+            <a href="category.html" class="btn btn-outline-primary">استعرض العروض</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="category-card">
+          <div class="category-image">
+            <img src="assets/img/product/camera.webp" alt="الأدوات والمعدات" class="img-fluid">
+          </div>
+          <div class="category-content">
+            <h3>الأدوات والمعدات</h3>
+            <a href="category.html" class="btn btn-outline-primary">استعرض العروض</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- /Categories Section -->
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works section bg-light">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>كيف يعمل إيجارك؟</h2>
+        <p>3 خطوات بسيطة لتأجير ما تحتاجه</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <h3>ابحث واحجز</h3>
+              <p>ابحث عن العنصر الذي تريد تأجيره واحجز التاريخ والوقت المناسبين لك</p>
+              <i class="bi bi-search-step"></i>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <h3>اكمل الدفع</h3>
+              <p>استخدم طرق الدفع الآمنة المتاحة لدينا لإكمال عملية الحجز</p>
+              <i class="bi bi-credit-card"></i>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <h3>استلم واستمتع</h3>
+              <p>استلم العنصر في الوقت والمكان المحددين واستمتع باستخدامه</p>
+              <i class="bi bi-check-circle"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /How It Works Section -->
+
+  
+
+
+           
+      
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="main-content text-center" data-aos="zoom-in" data-aos-delay="200">
+              <h2 data-aos="fade-up" data-aos-delay="300">هل لديك شيء لتؤجره؟</h2>
+              <p class="subtitle" data-aos="fade-up" data-aos-delay="350">انضم إلى منصة إيجارك وابدأ بكسب المال من الأشياء التي لا تستخدمها</p>
+              <div class="action-buttons" data-aos="fade-up" data-aos-delay="450">
+                <a href="register.html" class="btn-shop-now"> التسجيل كمستأجر او مؤجر</a>
+                <a href="renter_register.html" class="btn-view-deals">التسجيل كشركه</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Call To Action Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget footer-about">
+              <a href="index.html" class="logo">
+                <span class="sitename">إيجارك</span>
+              </a>
+              <p>منصة إيجارك هي الحل الأمثل لتأجير كل ما تحتاجه أو كسب المال من تأجير ممتلكاتك. نوفر تجربة آمنة وسهلة للجميع.</p>
+
+              <div class="social-links mt-4">
+                <h5>تواصل معنا</h5>
+                <div class="social-icons">
+                  <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                  <a href="#" aria-label="Snapchat"><i class="bi bi-snapchat"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="footer-widget">
+              <h4>تصفح</h4>
+              <ul class="footer-links">
+                <li><a href="category.html">السيارات</a></li>
+                <li><a href="category.html">الشقق والسكن</a></li>
+                <li><a href="category.html">الملابس</a></li>
+                <li><a href="category.html">الأدوات</a></li>
+                <li><a href="category.html">الأثاث</a></li>
+                <li><a href="category.html">عروض خاصة</a></li>
+              </ul>
+            </div>
+          </div>
+
+         
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-widget">
+              <h4>معلومات الاتصال</h4>
+              <div class="footer-contact">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt"></i>
+                  <span >القاهرة - جمهورية مصر العربية</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-telephone"></i>
+                  <span> +966 12 345 6789</span>
+                </div>
+                <div class="contact-item">
+                  <i class="bi bi-envelope"></i>
+                  <span> info@ijarak.com</span>
+                </div>
+               
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row gy-3 align-items-center">
+          <div class="col-lg-6 col-md-12">
+            <div class="copyright">
+              <p>© <span>حقوق النشر</span> <strong class="sitename">إيجارك</strong>. جميع الحقوق محفوظة.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4">
+              <div class="payment-methods">
+                <div class="payment-icons">
+                  <i class="bi bi-credit-card" aria-label="Credit Card"></i>
+                  <i class="bi bi-paypal" aria-label="PayPal"></i>
+                  <i class="bi bi-apple" aria-label="Apple Pay"></i>
+                  <i class="bi bi-google" aria-label="Google Pay"></i>
+                  <i class="bi bi-cash" aria-label="Cash on Delivery"></i>
+                </div>
+              </div>
+
+              <div class="legal-links">
+                <a href="tos.html">الشروط</a>
+                <a href="privacy.html">الخصوصية</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
