@@ -91,13 +91,13 @@
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 1.5rem;
-      color: #333;
+      color: var(--heading-color);
     }
 
     .hero-description {
       font-size: 1.2rem;
       margin-bottom: 2rem;
-      color: #666;
+      color: var(--heading-color);
     }
 
     .hero-visuals {
@@ -134,7 +134,7 @@
     }
 
     .feature-item p {
-      color: #666;
+      color: var(--heading-color);
       margin: 0;
     }
 
@@ -152,7 +152,7 @@
 
     .swiper-button-next,
     .swiper-button-prev {
-      color: #333;
+      color: var(--heading-color);
       background: rgba(255,255,255,0.7);
       width: 50px;
       height: 50px;
@@ -212,7 +212,7 @@
     
     }
     .btn-outline-primary:hover{
-      background-color: var(--heading-color);
+      background-color: var( --secondary);
       color: white;
     }
 
@@ -223,7 +223,7 @@
       border-radius: 15px;
       text-align: center;
       height: 100%;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px var( --secondary);
       position: relative;
       overflow: hidden;
       transition: transform 0.3s ease;
@@ -256,7 +256,7 @@
 
     /* Call to Action */
     .call-to-action {
-      background: linear-gradient(135deg, var(--primary-color), #0062cc);
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary));
       color: white;
       padding: 80px 0;
       text-align: center;
@@ -309,6 +309,30 @@
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
+   
+
+ .btn-outline-primary {
+  background: var(--primary);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 74, 173, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-primary:hover {
+  background: var(--secondary);
+  transform: scale(1.08);
+
+}
+
+.btn-outline-primary:active {
+  transform: scale(0.97);
+}
+
   </style>
 </head>
 
@@ -320,10 +344,12 @@
       <div class="container-fluid container-xl">
         <div class="d-flex py-3 align-items-center justify-content-between">
 
-          <!-- Logo -->
-          <a href="index.html" class="logo d-flex align-items-center">
-            <h1 class="sitename">إيجارك</h1>
-          </a>
+              <!-- Logo -->
+      <a href="index.html" class="logo d-flex align-items-center">
+         <h1 class="sitename">
+        <img src="assets/img/logo1.png" alt="شعار الموقع">
+        </h1>
+       </a>
 
           <!-- Search -->
           <form class="search-form desktop-search-form">
@@ -386,16 +412,9 @@
             <li><a href="index.html" class="active">الرئيسية</a></li>
             <li><a href="about.html">من نحن</a></li>
             <li><a href="partener.html">شركاؤنا</a></li>
-            <li class="dropdown"><a href="#"><span>الفئات</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="category.html">السيارات</a></li>
-                <li><a href="category.html">الشقق والسكن</a></li>
-                <li><a href="category.html">الملابس</a></li>
-                <li><a href="category.html">الأدوات والمعدات</a></li>
-                <li><a href="category.html">الأثاث</a></li>
-              </ul>
-            </li>
-            <li><a href="how-it-works.html"></a></li>
+            <li ><a href="category.html"><span>الفئات</span> </a>
+        
+            
             <li><a href="contact.html">اتصل بنا</a></li>
           </ul>
         </nav>
@@ -672,7 +691,7 @@
               <p class="subtitle" data-aos="fade-up" data-aos-delay="350">انضم إلى منصة إيجارك وابدأ بكسب المال من الأشياء التي لا تستخدمها</p>
               <div class="action-buttons" data-aos="fade-up" data-aos-delay="450">
                 <a href="register.html" class="btn-shop-now"> التسجيل كمستأجر او مؤجر</a>
-                <a href="renter_register.html" class="btn-view-deals">التسجيل كشركه</a>
+                <a href="company_register.html" class="btn-view-deals">التسجيل كشركه</a>
               </div>
             </div>
           </div>
