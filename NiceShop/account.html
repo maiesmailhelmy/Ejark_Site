@@ -946,39 +946,86 @@
       if (logoutLink) {
         logoutLink.addEventListener('click', function(e) {
           e.preventDefault();
-          if (confirm('هل أنت متأكد من تسجيل الخروج؟')) {
-            // هنا يمكنك إضافة كود تسجيل الخروج الفعلي
-            Swal.fire({
-              title: 'تم تسجيل الخروج بنجاح',
-              icon: 'success',
-              confirmButtonText: 'موافق',
-              confirmButtonColor: 'var(--primary)'
-            });
-            window.location.href = 'index.html'; // توجيه إلى صفحة تسجيل الدخول
-          }
+// تفعيل زر تسجيل الخروج
+const logoutLink = document.querySelector('.logout-link');
+if (logoutLink) {
+  logoutLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    Swal.fire({
+      title: 'هل أنت متأكد من تسجيل الخروج؟',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'نعم',
+      cancelButtonText: 'لا',
+      reverseButtons: true,
+      customClass: {
+        confirmButton: 'btn btn-primary',
+        cancelButton: 'btn btn-danger',
+   
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // عند تأكيد تسجيل الخروج
+        Swal.fire({
+          title: 'تم تسجيل الخروج بنجاح',
+          icon: 'success',
+          confirmButtonText: 'موافق',
+          confirmButtonColor: 'var(--primary)',
+          timer: 2000, // يختفي تلقائياً بعد ثانيتين
+          timerProgressBar: true
+        }).then(() => {
+          // توجيه إلى صفحة تسجيل الدخول بعد التأكيد
+          window.location.href = 'index.html';
         });
       }
+    });
+  });
+}
+
 
       // تفعيل زر حذف الحساب
       const deleteAccountBtn = document.querySelector('.btn-danger');
       if (deleteAccountBtn) {
         deleteAccountBtn.addEventListener('click', function(e) {
           e.preventDefault();
-          if (confirm('هل أنت متأكد من حذف الحساب؟ هذا الإجراء لا يمكن التراجع عنه.')) {
-            
-              Swal.fire({
-                  title: 'تم الحذف',
-                  text: 'تم حذف الحساب بنجاح',
-                  icon: 'success',
-                  confirmButtonText: 'حسناً',
-                  confirmButtonColor: 'var(--primary)',
-
-                });
-           
-            window.location.href = 'index.html'; 
-          }
+// تفعيل زر حذف الحساب
+const deleteAccountBtn = document.querySelector('.delete-account-btn');
+if (deleteAccountBtn) {
+  deleteAccountBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    Swal.fire({
+      title: 'هل أنت متأكد من حذف الحساب؟',
+      text: 'هذا الإجراء لا يمكن التراجع عنه',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'نعم، احذف',
+      cancelButtonText: 'إلغاء',
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      reverseButtons: true,
+      customClass: {
+        confirmButton: 'btn btn-danger',
+        cancelButton: 'btn btn-secondary'
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'تم الحذف',
+          text: 'تم حذف الحساب بنجاح',
+          icon: 'success',
+          confirmButtonText: 'حسناً',
+          confirmButtonColor: 'var(--primary)',
+          timer: 3000,
+          timerProgressBar: true
+        }).then(() => {
+          window.location.href = 'index.html';
         });
       }
+    });
+  });
+}
 
      
 document.querySelectorAll('button').forEach(button => {
