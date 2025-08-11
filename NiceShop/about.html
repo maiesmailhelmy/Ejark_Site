@@ -30,20 +30,7 @@
 
   
   <style>
-    :root {
-      --background-color: #ffffff;
-      --default-color: #444444;
-      --heading-color: #000000;
-      --accent-color: #252223;
-      --surface-color: #ffffff;
-      --contrast-color: #ffffff;
-      --nav-color: rgba(255, 255, 255, 0.8);
-      --nav-hover-color: #ffffff;
-      --nav-mobile-background-color: #ffffff;
-      --nav-dropdown-background-color: #ffffff;
-      --nav-dropdown-color: #444444;
-      --nav-dropdown-hover-color: #252223;
-    }
+ 
     
     body {
       font-family: 'Tajawal', sans-serif;
@@ -53,7 +40,7 @@
     }
     
     .hero-section {
-      background: linear-gradient(rgba(37, 34, 35, 0.9), rgba(37, 34, 35, 0.9)), url('assets/img/about-hero-bg.jpg');
+      background: linear-gradient(var(--secondary), var(--primary)), url('assets/img/about-hero-bg.jpg');
       background-size: cover;
       background-position: center;
       color: var(--contrast-color);
@@ -64,7 +51,7 @@
     
     .hero-section h1 {
       font-size: 3.5rem;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+      text-shadow: 1px 1px 3px var(--primary);
     }
     
     .about-section {
@@ -188,7 +175,7 @@
       border-color: var(--accent-color);
       color: var(--accent-color);
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px var(--primary);
     }
     
     .btn-outline-custom {
@@ -201,7 +188,7 @@
       background-color: var(--accent-color);
       color: var(--contrast-color);
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px var(--secondary);
     }
     
     strong {
@@ -223,14 +210,14 @@
       padding: 40px 30px;
       border-radius: 10px;
       background-color: var(--surface-color);
-      box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+      box-shadow: 0 5px 30px var(--primary);
       transition: all 0.3s;
       height: 100%;
     }
     
     .feature-box:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 15px 30px var(--primary);
     }
     
     .feature-box h3 {
@@ -273,28 +260,8 @@
         
           </div>
 
-          <div class="col-lg-4 col-md-12 text-center">
-            <div class="announcement-slider swiper init-swiper">
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": 1,
-                  "direction": "vertical",
-                  "effect": "slide"
-                }
-              </script>
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">🚚  توصيل مجاني للطلبات فوق 2000 جينه مصري</div>
-                <div class="swiper-slide">🎁 خصم 5% على أول حجز</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 d-none d-lg-block">
+          
+          
             
              
                 </ul>
@@ -310,10 +277,12 @@
       <div class="container-fluid container-xl">
         <div class="d-flex py-3 align-items-center justify-content-between">
 
-          <!-- Logo -->
-          <a href="index.html" class="logo d-flex align-items-center">
-            <h1 class="sitename" style="font-size:70px ;">إيجارك</h1>
-          </a>
+           <!-- Logo -->
+      <a href="index.html" class="logo d-flex align-items-center">
+         <h1 class="sitename">
+        <img src="assets/img/logo1.png" alt="شعار الموقع">
+        </h1>
+       </a>
 
           <!-- Search -->
           <form class="search-form desktop-search-form">
@@ -340,7 +309,7 @@
               </button>
               <div class="dropdown-menu">
                 <div class="dropdown-header">
-                  <h6>مرحبًا بك في <span class="sitename">NiceShop</span></h6>
+                  <h6>مرحبًا بك في <span class="sitename"></span>إيجارك</h6>
                   <p class="mb-0">الوصول إلى الحساب وإدارة الطلبات</p>
                 </div>
                 <div class="dropdown-body">
@@ -350,35 +319,19 @@
                   </a>
                   <a class="dropdown-item d-flex align-items-center" href="account.html">
                     <i class="bi bi-bag-check me-2"></i>
-                    <span>طلباتي</span>
+                    <span>لوحة التحكم</span>
                   </a>
-                  <a class="dropdown-item d-flex align-items-center" href="account.html">
-                    <i class="bi bi-heart me-2"></i>
-                    <span>قائمة الرغبات</span>
-                  </a>
-                  <a class="dropdown-item d-flex align-items-center" href="account.html">
-                    <i class="bi bi-gear me-2"></i>
-                    <span>الإعدادات</span>
+          
                   </a>
                 </div>
                 <div class="dropdown-footer">
-                  <a href="register.html" class="btn btn-primary w-100 mb-2">تسجيل الدخول</a>
-                  <a href="login.html" class="btn btn-outline-primary w-100">إنشاء حساب</a>
+                  <a href="login.html" class="btn btn-primary w-100 mb-2">تسجيل الدخول</a>
+                  <a href="register.html" class="btn btn-outline-primary w-100">إنشاء حساب</a>
                 </div>
               </div>
             </div>
 
-            <!-- Wishlist -->
-            <a href="account.html" class="header-action-btn d-none d-md-block">
-              <i class="bi bi-heart"></i>
-              <span class="badge">0</span>
-            </a>
-
-            <!-- Cart -->
-            <a href="cart.html" class="header-action-btn">
-              <i class="bi bi-cart3"></i>
-              <span class="badge">3</span>
-            </a>
+         
 
             <!-- Mobile Navigation Toggle -->
             <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
@@ -425,8 +378,8 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8" data-aos="zoom-in">
-          <h1 class="display-4 fw-bold mb-4">من نحن</h1>
-          <p class="lead mb-5">قصة منصة إيجارك والرؤية التي تقف خلف خدمتنا</p>
+          <h1 class="display-4 fw-bold mb-4" data-aos="fade-up">من نحن</h1>
+          <p class="lead mb-5" data-aos="fade-up">قصة منصة إيجارك والرؤية التي تقف خلف خدمتنا</p>
         </div>
       </div>
     </div>
@@ -436,25 +389,25 @@
   <section class="about-section">
     <div class="container">
       <div class="about-content" data-aos="fade-up">
-        <h2 class="section-title text-center">قصتنا</h2>
+        <h2 class="section-title text-center " data-aos="fade-up">قصتنا</h2>
         
-        <p class="text-center mb-5">
+        <p class="text-center mb-5" data-aos="fade-up">
           نؤمن بأن مشاركة الموارد هي مستقبل الاقتصاد في مصر والعالم العربي
         </p>
         
-        <p>
+        <p data-aos="fade-up">
           في ظل التغيرات الاقتصادية وارتفاع الأسعار الذي نعيشه في مصر، لاحظنا أن الكثير من الناس يواجهون صعوبة في شراء الأشياء التي يحتاجونها، ولو لفترة قصيرة فقط. ومن هنا جاءت فكرتنا.
         </p>
 
-        <p>
+        <p data-aos="fade-up">
           أطلقنا منصة <strong>إيجارك</strong> في عام <strong>2025</strong> بهدف تقديم حل عملي واقتصادي: أي شخص يستطيع أن يستخدم المنتج الذي يحتاجه دون أن يشتريه بسعر باهظ، بل يمكنه ببساطة تأجيره من شخص آخر عبر منصتنا.
         </p>
 
-        <p>
+        <p data-aos="fade-up">
           سواء كنت ترغب في تأجير شيء تمتلكه، أو تبحث عن منتج لتستأجره، فـ <strong>إيجارك</strong> هو المكان المناسب لك. نؤمن بأن الثقة والأمان هما أساس التعامل بين المؤجر والمستأجر، ونعمل باستمرار على تطوير المنصة لنقدم تجربة سهلة وآمنة للجميع.
         </p>
 
-        <p>
+        <p data-aos="fade-up">
           هدفنا هو أن نصل بـ <strong>إيجارك</strong> إلى كل بيت في مصر، وأن نصبح المنصة الأولى للتأجير بين الأفراد، حيث يستطيع الجميع الاستفادة بأقل التكاليف، وبأعلى درجات الراحة والثقة.
         </p>
       </div>
@@ -546,7 +499,7 @@
 
   <!-- CTA Section -->
   <section class="cta-section">
-    <div class="container text-center">
+    <div class="container text-center" data-aos="fade-up">
       <h2 class="mb-4">انضم إلى مجتمع إيجارك اليوم</h2>
       <p class="mb-5">سجل الآن وابدأ رحلتك مع أكبر منصة تأجير في مصر</p>
       <div class="d-flex justify-content-center gap-3 flex-wrap">
