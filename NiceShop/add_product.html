@@ -32,28 +32,29 @@
   <link href="assets/css/main.css" rel="stylesheet">
 <style>
 .btn-primary {
-  background-color: black;
-  border-color: black;
+  background-color:  var(--primary) ;
+  border-color:ar(--primary) ;
   color: white;
   height: 50px;
-  transition: all 0.3s ease-in-out; /* حركة سلسة */
+  transition: all 0.3s ease-in-out; 
 }
 
 .btn-primary:hover {
-  box-shadow: 0 4px 15px rgb(128, 128, 128); /* ظل ناعم */
-  transform: translateY(-5px); /* حركة لأعلى */
+  box-shadow: 0 4px 15px var(--secondary); /* ظل ناعم */
+  transform: translateY(-5px); 
+  background-color:var(--secondary) ; /* تغيير لون الخلفية عند التمرير */
 }
 
 .addproduct-form-wrapper{
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 16px var(--secobdary);
   padding: 32px;
   margin-top: 32px;
 }
 .addproduct-form-wrapper:hover {
-  box-shadow: 0 4px 15px var(--accent-color); /* ظل ناعم */
-  transform: translateY(-10px); /* حركة لأعلى */
+  box-shadow: 0 4px 15px var(--secobdary); 
+  transform: translateY(-10px);
 }
 
 
@@ -63,61 +64,24 @@
 
 <body class="register-page">
 
-  <header id="header" class="header sticky-top">
+  <header id="header" class="header sticky-top" data-aos="fade-down">
     <!-- Top Bar -->
-    <div class="top-bar py-2">
-      <div class="container-fluid container-xl">
-        <div class="row align-items-center">
-          <div class="col-lg-4 d-none d-lg-flex">
-        
-          </div>
-
-          <div class="col-lg-4 col-md-12 text-center">
-            <div class="announcement-slider swiper init-swiper">
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": 1,
-                  "direction": "vertical",
-                  "effect": "slide"
-                }
-              </script>
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">🚚  توصيل مجاني للطلبات فوق 2000 جينه مصري</div>
-                <div class="swiper-slide">🎁 خصم 5% على أول حجز</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 d-none d-lg-block">
-            
-             
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Header -->
     <div class="main-header">
       <div class="container-fluid container-xl">
         <div class="d-flex py-3 align-items-center justify-content-between">
 
-          <!-- Logo -->
+                    <!-- Logo -->
           <a href="index.html" class="logo d-flex align-items-center">
-            <h4 class="sitename" style="font-size:70px ;">إيجارك</h4>
+            <h1 class="sitename">
+              <img src="assets/img/logo1.png" alt="شعار إيجارك" style="height: 40px;">
+            </h1>
           </a>
+          
 
           <!-- Search -->
           <form class="search-form desktop-search-form">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="ابحث عن المنتجات">
+              <input type="text" class="form-control" placeholder="ابحث عن ما تريد تأجيره...">
               <button class="btn" type="submit">
                 <i class="bi bi-search"></i>
               </button>
@@ -139,8 +103,8 @@
               </button>
               <div class="dropdown-menu">
                 <div class="dropdown-header">
-                  <h6>مرحبًا بك في <span class="sitename">NiceShop</span></h6>
-                  <p class="mb-0">الوصول إلى الحساب وإدارة الطلبات</p>
+                  <h6>مرحبًا بك في <span class="sitename">إيجارك</span></h6>
+                  <p class="mb-0">إدارة الحساب والطلبات</p>
                 </div>
                 <div class="dropdown-body">
                   <a class="dropdown-item d-flex align-items-center" href="account.html">
@@ -149,35 +113,15 @@
                   </a>
                   <a class="dropdown-item d-flex align-items-center" href="account.html">
                     <i class="bi bi-bag-check me-2"></i>
-                    <span>طلباتي</span>
-                  </a>
-                  <a class="dropdown-item d-flex align-items-center" href="account.html">
-                    <i class="bi bi-heart me-2"></i>
-                    <span>قائمة الرغبات</span>
-                  </a>
-                  <a class="dropdown-item d-flex align-items-center" href="account.html">
-                    <i class="bi bi-gear me-2"></i>
-                    <span>الإعدادات</span>
+                    <span>لوحة التحكم</span>
                   </a>
                 </div>
                 <div class="dropdown-footer">
-                  <a href="register.html" class="btn btn-primary w-100 mb-2">تسجيل الدخول</a>
-                  <a href="login.html" class="btn btn-outline-primary w-100">إنشاء حساب</a>
+                  <a href="login.html" class="btn btn-primary w-100 mb-2">تسجيل الدخول</a>
+                  <a href="register.html" class="btn btn-outline-primary w-100">إنشاء حساب</a>
                 </div>
               </div>
             </div>
-
-            <!-- Wishlist -->
-            <a href="account.html" class="header-action-btn d-none d-md-block">
-              <i class="bi bi-heart"></i>
-              <span class="badge">0</span>
-            </a>
-
-            <!-- Cart -->
-            <a href="cart.html" class="header-action-btn">
-              <i class="bi bi-cart3"></i>
-              <span class="badge">3</span>
-            </a>
 
             <!-- Mobile Navigation Toggle -->
             <i class="mobile-nav-toggle d-xl-none bi bi-list me-0"></i>
@@ -192,10 +136,11 @@
       <div class="container-fluid container-xl position-relative">
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="index.html" >الرئيسية</a></li>
             <li><a href="about.html">من نحن</a></li>
-            <li><a href="category.html">الفئات</a></li>
-       
+            <li><a href="partener.html">شركاؤنا</a></li>
+            <li ><a href="category.html"><span>الفئات</span> </a>
+
             
             <li><a href="contact.html">اتصل بنا</a></li>
           </ul>
@@ -208,7 +153,7 @@
       <div class="container">
         <form class="search-form">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="ابحث عن المنتجات">
+            <input type="text" class="form-control" placeholder="ابحث عن ما تريد تأجيره...">
             <button class="btn" type="submit">
               <i class="bi bi-search"></i>
             </button>
@@ -216,8 +161,14 @@
         </form>
       </div>
     </div>
-
   </header>
+
+
+  
+  
+ 
+  
+    
 
 <section id="add-product" class="register section">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -244,20 +195,30 @@
   </select>
 </div>
 
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="  سعرالمنتج " required>
+            </div>
+
 
             <!-- وصف المنتج -->
             <div class="mb-3">
               <textarea class="form-control" rows="4" placeholder="وصف المنتج" required></textarea>
             </div>
 
+               <!-- الموقع -->
+            <div class="mb-3">  
+              <input type="text" class="form-control" id="address" placeholder="العنوان " required>
+            </div>
+
+
             <!-- رفع الصور -->
             <div class="mb-3">
               <input type="file" class="form-control" multiple accept="image/*" required>
             </div>
-
+         
             <!-- زر الإرسال -->
             <div class="text-center">
-              <button type="submit" class="btn btn-primary w-1000" style="background-color: black; height: 50px ;">رفع المنتج</button>
+              <button type="submit" class="btn btn-primary w-1000">رفع المنتج</button>
             </div>
           </form>
         </div>
