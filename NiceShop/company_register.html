@@ -168,10 +168,12 @@
       <div class="container-fluid container-xl">
         <div class="d-flex py-3 align-items-center justify-content-between">
 
-          <!-- Logo -->
-          <a href="index.html" class="logo d-flex align-items-center">
-            <h1 class="sitename">إيجارك</h1>
-          </a>
+           <!-- Logo -->
+      <a href="index.html" class="logo d-flex align-items-center">
+         <h1 class="sitename">
+        <img src="assets/img/logo1.png" alt="شعار الموقع">
+        </h1>
+       </a>
 
           <!-- Search -->
           <form class="search-form desktop-search-form">
@@ -429,7 +431,7 @@
                     </div>
 
                     <div class="d-grid mb-4">
-                      <button type="submit" class="btn btn-register">تسجيل الشركة</button>
+                      <button type="submit" class="btn btn-register"><a href="category.html" style="color:white">تسجيل الشركة</a> تسجيل الشركة</button>
                     </div>
 
                     <div class="login-link text-center">
@@ -599,7 +601,9 @@
             title: 'خطأ',
             text: 'لم يتم العثور على العنوان، يرجى التأكد من كتابته بشكل صحيح',
             icon: 'error',
-            confirmButtonText: 'حسناً'
+            confirmButtonText: 'حسناً',
+                  confirmButtonColor: 'var(--primary)'
+
           });
         }
       })
@@ -608,7 +612,8 @@
           title: 'خطأ',
           text: 'حدث خطأ أثناء محاولة تحديد الموقع',
           icon: 'error',
-          confirmButtonText: 'حسناً'
+          confirmButtonText: 'حسناً',
+                confirmButtonColor: 'var(--primary)'
         });
         console.error(error);
       });
