@@ -35,7 +35,7 @@
     /* Additional styles for form consistency */
     .register-page .form-floating label,
     .register-page .form-label {
-      color: #495057;
+      color: var( --heading-color);
       font-weight: 500;
     }
     
@@ -49,8 +49,8 @@
     
     .register-page .form-control:focus,
     .register-page .form-select:focus {
-      border-color: #86b7fe;
-      box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+      border-color:var(--primary);
+      box-shadow: 0 0 0 0.25rem var(--secondary);
     }
     
     .register-page .btn-register {
@@ -106,7 +106,7 @@
       padding: 0 15px;
       position: relative;
       z-index: 1;
-      color: #6c757d;
+      color: var(--heading-color);
     }
     
     .divider:before {
@@ -128,7 +128,7 @@
       padding: 8px 15px;
       border-radius: 8px;
       border: 1px solid #dee2e6;
-      color: #495057;
+      color: var(--heading-color);
     }
     
     .btn-social i {
@@ -150,10 +150,12 @@
       <div class="container-fluid container-xl">
         <div class="d-flex py-3 align-items-center justify-content-between">
 
-          <!-- Logo -->
-          <a href="index.html" class="logo d-flex align-items-center">
-            <h1 class="sitename">إيجارك</h1>
-          </a>
+             <!-- Logo -->
+      <a href="index.html" class="logo d-flex align-items-center">
+         <h1 class="sitename">
+        <img src="assets/img/logo1.png" alt="شعار الموقع">
+        </h1>
+       </a>
 
           <!-- Search -->
           <form class="search-form desktop-search-form">
@@ -216,16 +218,9 @@
             <li><a href="index.html" class="active">الرئيسية</a></li>
             <li><a href="about.html">من نحن</a></li>
             <li><a href="partener.html">شركاؤنا</a></li>
-            <li class="dropdown"><a href="#"><span>الفئات</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="category.html">السيارات</a></li>
-                <li><a href="category.html">الشقق والسكن</a></li>
-                <li><a href="category.html">الملابس</a></li>
-                <li><a href="category.html">الأدوات والمعدات</a></li>
-                <li><a href="category.html">الأثاث</a></li>
-              </ul>
-            </li>
-            <li><a href="how-it-works.html"></a></li>
+            <li ><a href="category.html"><span>الفئات</span> </a>
+           
+            
             <li><a href="contact.html">اتصل بنا</a></li>
           </ul>
         </nav>
@@ -547,8 +542,7 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
@@ -589,70 +583,82 @@
       qena: [26.1644, 32.7267]
     };
 
-    // Handle city selection change
-    document.getElementById('city').addEventListener('change', function() {
-      const selectedCity = this.value;
-      if (selectedCity && cityCoordinates[selectedCity]) {
-        const [lat, lon] = cityCoordinates[selectedCity];
-        if (marker) map.removeLayer(marker);
-        marker = L.marker([lat, lon]).addTo(map);
-        map.setView([lat, lon], 12);
+   // Update your existing map code to include this
+let selectedCity = null;
+
+document.getElementById('city').addEventListener('change', function() {
+  selectedCity = this.value;
+  if (selectedCity && cityCoordinates[selectedCity]) {
+    const [lat, lon] = cityCoordinates[selectedCity];
+    updateMapMarker(lat, lon);
+  }
+});
+
+function updateMapMarker(lat, lon) {
+  if (marker) map.removeLayer(marker);
+  marker = L.marker([lat, lon]).addTo(map);
+  map.setView([lat, lon], 12);
+  
+  document.getElementById('latitude').value = lat;
+  document.getElementById('longitude').value = lon;
+  
+  // Reverse geocode to verify address
+  verifyAddress(lat, lon);
+}
+
+function verifyAddress(lat, lon) {
+  fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&accept-language=ar`)
+    .then(response => response.json())
+    .then(data => {
+      if (data.address) {
+        const cityMatch = data.address.city || data.address.town || data.address.village;
+        const streetMatch = data.address.road;
         
-        // Update hidden inputs
-        document.getElementById('latitude').value = lat;
-        document.getElementById('longitude').value = lon;
+        // Compare with user input
+        const userCity = document.getElementById('city').value;
+        const userStreet = document.getElementById('street').value;
+        
+        if (cityMatch && userCity && !cityMatch.toLowerCase().includes(getCityName(userCity).toLowerCase())) {
+          Swal.fire({
+            icon: 'warning',
+            title: 'تنبيه',
+            text: 'المدينة المحددة لا تتطابق مع موقع الخريطة',
+            confirmButtonText: 'حسناً',
+              confirmButtonColor: 'var(--primary)'
+          });
+        }
+        
+        if (streetMatch && userStreet && !streetMatch.toLowerCase().includes(userStreet.toLowerCase())) {
+          Swal.fire({
+            icon: 'warning',
+            title: 'تنبيه',
+            text: 'اسم الشارع لا يتطابق مع موقع الخريطة',
+            confirmButtonText: 'حسناً',
+              confirmButtonColor: 'var(--primary)'
+          });
+        }
       }
     });
+}
 
-    // Handle map clicks
-    map.on('click', function(e) {
-      if (marker) map.removeLayer(marker);
-      marker = L.marker(e.latlng).addTo(map);
+// Helper function to get city name from value
+function getCityName(cityValue) {
+  const cityNames = {
+    cairo: "القاهرة",
+    alexandria: "الإسكندرية",
+    giza: "الجيزة",
+    // Add all other cities
+  };
+  return cityNames[cityValue] || cityValue;
+}
+ 
       
-      // Update hidden inputs
-      document.getElementById('latitude').value = e.latlng.lat;
-      document.getElementById('longitude').value = e.latlng.lng;
-      
-      // Reverse geocode to get address
-      fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${e.latlng.lat}&lon=${e.latlng.lng}`)
-        .then(response => response.json())
-        .then(data => {
-          if (data.display_name) {
-            document.getElementById('address').value = data.display_name;
-          }
-        });
-    });
-
-    // Handle address input for geocoding
-    document.getElementById('address').addEventListener('blur', function() {
-      const address = this.value;
-      if (!address.trim()) return;
-
-      const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address + ', Egypt')}`;
-
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          if (data && data.length > 0) {
-            const result = data[0];
-            const lat = parseFloat(result.lat);
-            const lon = parseFloat(result.lon);
-
-            if (marker) map.removeLayer(marker);
-            marker = L.marker([lat, lon]).addTo(map);
-            map.setView([lat, lon], 15);
-
-            document.getElementById('latitude').value = lat;
-            document.getElementById('longitude').value = lon;
-          } else {
-            alert('لم يتم العثور على هذا العنوان، يرجى التأكد من كتابته بشكل صحيح.');
-          }
-        })
-        .catch(error => {
-          alert('حدث خطأ أثناء محاولة تحديد الموقع. حاول مرة أخرى.');
-          console.error(error);
-        });
-    });
+    
   </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
